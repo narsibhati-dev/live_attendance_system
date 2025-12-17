@@ -9,12 +9,25 @@
   "peerDependencies": {
     "typescript": "^5"
   },
+  "scripts": {
+    "dev": "bun run --watch src/server.ts",
+    "migrate": "bunx prisma migrate deploy",
+    "generate": "bunx prisma generate",
+    "reset": "bun prisma migrate reset",
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down"
+  },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
+    "@types/bcrypt": "^6.0.0",
     "@types/express": "5",
     "@types/jsonwebtoken": "^9.0.10",
     "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
     "express": "5",
     "jsonwebtoken": "^9.0.3",
+    "prisma": "^7.2.0",
     "zod": "^4.2.1"
   }
 }

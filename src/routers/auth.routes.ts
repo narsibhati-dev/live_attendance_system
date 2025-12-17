@@ -4,9 +4,10 @@ import {
   meController,
   signupController,
 } from "../controllers/auth.controller";
+import { authMiddleware } from "../middleware/auth.middleware";
 
 export const authRouter = express.Router();
 
 authRouter.post("/signup", signupController);
 authRouter.post("/login", loginController);
-authRouter.get("/me", meController);
+authRouter.get("/me", authMiddleware, meController);
