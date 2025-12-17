@@ -25,6 +25,7 @@ app.use(authMiddleware);
 app.use("/class", classRouter);
 app.use("/attendance", attendanceRouter);
 app.use("/students", studentsRouter);
+
 app.listen(PORT, () => {
   console.log("[ server ] is running on http://localhost:3000");
 });

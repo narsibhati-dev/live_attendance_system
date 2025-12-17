@@ -1,7 +1,12 @@
 import express from "express";
-import { createClassController } from "../controllers/class.controller";
+import {
+  addStudentToClassController,
+  createClassController,
+  getClassByIdController,
+} from "../controllers/class.controller";
 
 export const classRouter = express.Router();
 
 classRouter.post("/", createClassController);
-classRouter.post("/:id/add-student");
+classRouter.post("/:id/add-student", addStudentToClassController);
+classRouter.get("/class/:id", getClassByIdController);
